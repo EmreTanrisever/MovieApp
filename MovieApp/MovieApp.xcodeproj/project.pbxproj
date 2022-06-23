@@ -13,7 +13,12 @@
 		8B389E50285E22BD0010B05F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B389E4E285E22BD0010B05F /* Main.storyboard */; };
 		8B389E52285E22BF0010B05F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B389E51285E22BF0010B05F /* Assets.xcassets */; };
 		8B389E55285E22BF0010B05F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B389E53285E22BF0010B05F /* LaunchScreen.storyboard */; };
+		8B57535D28650FB900939451 /* SplashScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B57535C28650FB900939451 /* SplashScreenController.swift */; };
+		8B5753602865102200939451 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8B57535F2865102200939451 /* SnapKit */; };
 		8B9DE14C286272FD009D6968 /* MovieListController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9DE14B286272FD009D6968 /* MovieListController+TableView.swift */; };
+		8BBF43FC286517A3007693FF /* SplashScreenExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF43FB286517A3007693FF /* SplashScreenExtension.swift */; };
+		8BBF43FE286519F6007693FF /* MovieDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF43FD286519F6007693FF /* MovieDetailController.swift */; };
+		8BBF440028651A33007693FF /* FavoriteMovieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF43FF28651A33007693FF /* FavoriteMovieController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +30,11 @@
 		8B389E51285E22BF0010B05F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B389E54285E22BF0010B05F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B389E56285E22BF0010B05F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B57535C28650FB900939451 /* SplashScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenController.swift; sourceTree = "<group>"; };
 		8B9DE14B286272FD009D6968 /* MovieListController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieListController+TableView.swift"; sourceTree = "<group>"; };
+		8BBF43FB286517A3007693FF /* SplashScreenExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenExtension.swift; sourceTree = "<group>"; };
+		8BBF43FD286519F6007693FF /* MovieDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailController.swift; sourceTree = "<group>"; };
+		8BBF43FF28651A33007693FF /* FavoriteMovieController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMovieController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B5753602865102200939451 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +134,8 @@
 		8B9DE14E286273BA009D6968 /* SplashScreen */ = {
 			isa = PBXGroup;
 			children = (
+				8B57535C28650FB900939451 /* SplashScreenController.swift */,
+				8BBF43FB286517A3007693FF /* SplashScreenExtension.swift */,
 			);
 			path = SplashScreen;
 			sourceTree = "<group>";
@@ -131,6 +143,7 @@
 		8B9DE14F286273C1009D6968 /* DetailScreen */ = {
 			isa = PBXGroup;
 			children = (
+				8BBF43FD286519F6007693FF /* MovieDetailController.swift */,
 			);
 			path = DetailScreen;
 			sourceTree = "<group>";
@@ -138,6 +151,7 @@
 		8B9DE150286273EB009D6968 /* FavoriteMoviesScreen */ = {
 			isa = PBXGroup;
 			children = (
+				8BBF43FF28651A33007693FF /* FavoriteMovieController.swift */,
 			);
 			path = FavoriteMoviesScreen;
 			sourceTree = "<group>";
@@ -158,6 +172,9 @@
 			dependencies = (
 			);
 			name = MovieApp;
+			packageProductDependencies = (
+				8B57535F2865102200939451 /* SnapKit */,
+			);
 			productName = MovieApp;
 			productReference = 8B389E45285E22BD0010B05F /* MovieApp.app */;
 			productType = "com.apple.product-type.application";
@@ -186,6 +203,9 @@
 				Base,
 			);
 			mainGroup = 8B389E3C285E22BD0010B05F;
+			packageReferences = (
+				8B57535E2865102200939451 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 8B389E46285E22BD0010B05F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -217,6 +237,10 @@
 				8B389E4D285E22BD0010B05F /* MovieListController.swift in Sources */,
 				8B389E49285E22BD0010B05F /* AppDelegate.swift in Sources */,
 				8B389E4B285E22BD0010B05F /* SceneDelegate.swift in Sources */,
+				8BBF440028651A33007693FF /* FavoriteMovieController.swift in Sources */,
+				8BBF43FE286519F6007693FF /* MovieDetailController.swift in Sources */,
+				8BBF43FC286517A3007693FF /* SplashScreenExtension.swift in Sources */,
+				8B57535D28650FB900939451 /* SplashScreenController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +464,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8B57535E2865102200939451 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8B57535F2865102200939451 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B57535E2865102200939451 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8B389E3D285E22BD0010B05F /* Project object */;
 }

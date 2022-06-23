@@ -1,18 +1,17 @@
 //
-//  ViewController.swift
+//  FavoriteMovieController.swift
 //  MovieApp
 //
-//  Created by Emre Tanrısever on 18.06.2022.
+//  Created by Emre Tanrısever on 24.06.2022.
 //
 
 import UIKit
 
-class MovieListController: UIViewController {
+class FavoriteMovieController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
-    
     }
-    
 }
