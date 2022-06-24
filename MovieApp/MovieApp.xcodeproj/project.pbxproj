@@ -15,6 +15,7 @@
 		8B389E55285E22BF0010B05F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B389E53285E22BF0010B05F /* LaunchScreen.storyboard */; };
 		8B57535D28650FB900939451 /* SplashScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B57535C28650FB900939451 /* SplashScreenController.swift */; };
 		8B5753602865102200939451 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8B57535F2865102200939451 /* SnapKit */; };
+		8B8BF8362865D79A00C8E073 /* MovieListExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8BF8352865D79A00C8E073 /* MovieListExtension.swift */; };
 		8B9DE14C286272FD009D6968 /* MovieListController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9DE14B286272FD009D6968 /* MovieListController+TableView.swift */; };
 		8BBF43FC286517A3007693FF /* SplashScreenExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF43FB286517A3007693FF /* SplashScreenExtension.swift */; };
 		8BBF43FE286519F6007693FF /* MovieDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF43FD286519F6007693FF /* MovieDetailController.swift */; };
@@ -31,6 +32,7 @@
 		8B389E54285E22BF0010B05F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B389E56285E22BF0010B05F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B57535C28650FB900939451 /* SplashScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenController.swift; sourceTree = "<group>"; };
+		8B8BF8352865D79A00C8E073 /* MovieListExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListExtension.swift; sourceTree = "<group>"; };
 		8B9DE14B286272FD009D6968 /* MovieListController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieListController+TableView.swift"; sourceTree = "<group>"; };
 		8BBF43FB286517A3007693FF /* SplashScreenExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenExtension.swift; sourceTree = "<group>"; };
 		8BBF43FD286519F6007693FF /* MovieDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailController.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			children = (
 				8B389E4C285E22BD0010B05F /* MovieListController.swift */,
 				8B9DE14B286272FD009D6968 /* MovieListController+TableView.swift */,
+				8B8BF8352865D79A00C8E073 /* MovieListExtension.swift */,
 			);
 			path = MovieListScreen;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				8BBF440028651A33007693FF /* FavoriteMovieController.swift in Sources */,
 				8BBF43FE286519F6007693FF /* MovieDetailController.swift in Sources */,
 				8BBF43FC286517A3007693FF /* SplashScreenExtension.swift in Sources */,
+				8B8BF8362865D79A00C8E073 /* MovieListExtension.swift in Sources */,
 				8B57535D28650FB900939451 /* SplashScreenController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
