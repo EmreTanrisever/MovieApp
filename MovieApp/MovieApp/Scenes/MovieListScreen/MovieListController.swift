@@ -19,7 +19,7 @@ class MovieListController: UIViewController {
     }()
     
     private var viewModel = MovieListViewModel()
-    var movies = [Movie]()
+    static var movies = [Movie]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,37 +28,39 @@ class MovieListController: UIViewController {
         view.backgroundColor = .white
         navigationController?.navigationBar.prefersLargeTitles = true
         title = "Movie List"
-        
-//        movies.getData { movies in
-//            self.movieList = movies!
-//            DispatchQueue.main.async {
-//                self.movieListTableView.reloadData()
-//            }
-//        }
-        
+
         configureMovieList()
         
         Task {
-            movies = await viewModel.getMoviesFromService()
+            MovieListController.movies = await viewModel.getMoviesFromService()
             movieListTableView.reloadData()
         }
+    }
+    
+    @objc func addButtonAction(sender: UIButton) {
+        print("\(sender.tag)")
     }
 
 }
 
 
-
+// MARK: - TableView Extension
 extension MovieListController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movies.count
+        return MovieListController.movies.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MovieListTableViewCell") as? MovieListTableViewCell else { return UITableViewCell() }
-        cell.setMovie(movies[indexPath.row])
+        cell.setMovie(MovieListController.movies[indexPath.row])
+        cell.addToFavoriteButton.addTarget(self, action: #selector(addButtonAction(sender:)), for: .touchUpInside)
         return cell
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let viewController = MovieDetailViewController()
+        viewController.index = indexPath.row
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }
