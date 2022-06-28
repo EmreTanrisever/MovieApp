@@ -10,13 +10,11 @@ import Foundation
 extension MovieListTableViewCell {
     
     func configure() {
-//        addSubview(movieImageView)
         addSubview(titleLabel)
         addSubview(averageLabel)
         
         setTitleLabelConstraint()
         setAverageLabelConstraints()
-//        setMovieImageViewConstraints()
     }
     
     private func setTitleLabelConstraint() {
@@ -34,12 +32,5 @@ extension MovieListTableViewCell {
             
         }
     }
-    
-//    private func setMovieImageViewConstraints() {
-//        titleLabel.snp.makeConstraints { make in
-//            make.leading.equalToSuperview().offset(8)
-//            make.width.height.equalTo(100)
-//            make.top.equalToSuperview()
-//        }
-//    }
+
 }

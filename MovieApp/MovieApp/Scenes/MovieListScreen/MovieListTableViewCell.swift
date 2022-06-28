@@ -10,12 +10,6 @@ import SnapKit
 
 class MovieListTableViewCell: UITableViewCell {
     
-//    let movieImageView: UIImageView = {
-//        let imageView = UIImageView()
-//        
-//        return imageView
-//    }()
-    
     let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Deneme"
@@ -37,6 +31,7 @@ class MovieListTableViewCell: UITableViewCell {
     func setMovie(_ movie: Movie) {
         titleLabel.text = movie.original_title
         averageLabel.text = "Average: \(String(movie.vote_average))"
+        
         print("\(movie.overview) \n \(movie.original_title) \n \(movie.poster_path) \n \(movie.vote_average)")
     }
     
