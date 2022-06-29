@@ -27,6 +27,8 @@
 		8BBF43FC286517A3007693FF /* SplashScreenExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF43FB286517A3007693FF /* SplashScreenExtension.swift */; };
 		8BBF43FE286519F6007693FF /* MovieDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF43FD286519F6007693FF /* MovieDetailController.swift */; };
 		8BBF440028651A33007693FF /* FavoriteMovieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF43FF28651A33007693FF /* FavoriteMovieController.swift */; };
+		8BC673FC286C692A00EE37FE /* FavoriteMoviesExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC673FB286C692A00EE37FE /* FavoriteMoviesExtension.swift */; };
+		8BC673FE286C6BCD00EE37FE /* FavoriteMoviesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC673FD286C6BCD00EE37FE /* FavoriteMoviesTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		8BBF43FB286517A3007693FF /* SplashScreenExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenExtension.swift; sourceTree = "<group>"; };
 		8BBF43FD286519F6007693FF /* MovieDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailController.swift; sourceTree = "<group>"; };
 		8BBF43FF28651A33007693FF /* FavoriteMovieController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMovieController.swift; sourceTree = "<group>"; };
+		8BC673FB286C692A00EE37FE /* FavoriteMoviesExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMoviesExtension.swift; sourceTree = "<group>"; };
+		8BC673FD286C6BCD00EE37FE /* FavoriteMoviesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMoviesTableViewCell.swift; sourceTree = "<group>"; };
 		FA414886CF82603D467F5950 /* Pods-MovieApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieApp.release.xcconfig"; path = "Target Support Files/Pods-MovieApp/Pods-MovieApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -189,6 +193,8 @@
 			isa = PBXGroup;
 			children = (
 				8BBF43FF28651A33007693FF /* FavoriteMovieController.swift */,
+				8BC673FB286C692A00EE37FE /* FavoriteMoviesExtension.swift */,
+				8BC673FD286C6BCD00EE37FE /* FavoriteMoviesTableViewCell.swift */,
 			);
 			path = FavoriteMoviesScreen;
 			sourceTree = "<group>";
@@ -329,7 +335,9 @@
 				8BA9C9A628665BAC0050A29E /* MovieService.swift in Sources */,
 				8B568FA6286BA86C00BFEE37 /* MovieDetailExtension.swift in Sources */,
 				8B4832D62868A3EF0042AB86 /* MovieListViewModel.swift in Sources */,
+				8BC673FE286C6BCD00EE37FE /* FavoriteMoviesTableViewCell.swift in Sources */,
 				8B389E4B285E22BD0010B05F /* SceneDelegate.swift in Sources */,
+				8BC673FC286C692A00EE37FE /* FavoriteMoviesExtension.swift in Sources */,
 				8BBF440028651A33007693FF /* FavoriteMovieController.swift in Sources */,
 				8BBF43FE286519F6007693FF /* MovieDetailController.swift in Sources */,
 				8BBF43FC286517A3007693FF /* SplashScreenExtension.swift in Sources */,

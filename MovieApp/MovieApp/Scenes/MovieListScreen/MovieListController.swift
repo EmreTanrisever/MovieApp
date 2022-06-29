@@ -54,6 +54,7 @@ extension MovieListController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MovieListTableViewCell") as? MovieListTableViewCell else { return UITableViewCell() }
         cell.setMovie(MovieListController.movies[indexPath.row])
+        cell.addToFavoriteButton.tag = indexPath.row
         cell.addToFavoriteButton.addTarget(self, action: #selector(addButtonAction(sender:)), for: .touchUpInside)
         return cell
     }
