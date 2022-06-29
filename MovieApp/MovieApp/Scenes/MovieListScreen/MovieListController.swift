@@ -40,10 +40,10 @@ class MovieListController: UIViewController {
     
     @objc func addButtonAction(sender: UIButton) {
         viewModel.savedMovieToDB(movie: MovieListController.movies[sender.tag])
+        FavoriteMovieController().refresh()
     }
 
 }
-
 
 // MARK: - TableView Extension
 extension MovieListController: UITableViewDelegate, UITableViewDataSource {
