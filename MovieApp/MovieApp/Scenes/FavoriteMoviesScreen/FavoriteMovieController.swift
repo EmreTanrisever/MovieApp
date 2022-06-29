@@ -7,7 +7,11 @@
 
 import UIKit
 
-class FavoriteMovieController: UIViewController {
+protocol FavoriteMovieControllerDelegate: FavoriteMovieController {
+    func refresh()
+}
+
+class FavoriteMovieController: UIViewController, FavoriteMovieControllerDelegate {
 
     lazy var favoriteMoviesTableView: UITableView = {
         let tableView = UITableView()
@@ -18,6 +22,9 @@ class FavoriteMovieController: UIViewController {
         return tableView
     }()
     
+    let viewModel = FavoriteMovieViewModel()
+    var movies = [Movie]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,17 +32,38 @@ class FavoriteMovieController: UIViewController {
         title = "Favorite Movie"
         configure()
         
+        movies = viewModel.readMoviesFromDB()
     }
+    
+    @objc func deleteButtonAction(sender: UIButton) {
+        viewModel.deleteMovieFromFavoriteList(index: sender.tag)
+        movies = viewModel.readMoviesFromDB()
+        favoriteMoviesTableView.reloadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        refresh()
+    }
+    
+    func refresh() {
+        movies = viewModel.readMoviesFromDB()
+        favoriteMoviesTableView.reloadData()
+    }
+
 }
 
 extension FavoriteMovieController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return movies.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "FavoriteMoviesTableViewCell") as? FavoriteMoviesTableViewCell else { return UITableViewCell() }
-        
+        cell.setMovie(movies[indexPath.row])
+        cell.deleteMovieFromFavoriteListButton.tag = indexPath.row
+        cell.deleteMovieFromFavoriteListButton.addTarget(self, action: #selector(deleteButtonAction(sender: )), for: .touchUpInside)
         return cell
     }
 }

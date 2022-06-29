@@ -20,6 +20,7 @@ class MovieListController: UIViewController {
     
     private var viewModel = MovieListViewModel()
     static var movies = [Movie]()
+    weak var delegate: FavoriteMovieControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +39,7 @@ class MovieListController: UIViewController {
     }
     
     @objc func addButtonAction(sender: UIButton) {
-        print("\(sender.tag)")
+        viewModel.savedMovieToDB(movie: MovieListController.movies[sender.tag])
     }
 
 }
