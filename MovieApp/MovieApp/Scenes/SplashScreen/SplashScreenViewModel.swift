@@ -22,7 +22,6 @@ class SplashScreenViewModel: SplashScreenProtocol {
             switch result {
             case .success(let movies):
                 AppManager.shared.movies = movies.results
-                print(AppManager.shared.movies)
             case .failure(let error):
                 print("Error: \(error)")
             }

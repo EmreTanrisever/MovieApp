@@ -38,7 +38,7 @@ class MovieListController: UIViewController {
     }
     
     @objc func addButtonAction(sender: UIButton) {
-        //viewModel.savedMovieToDB(movie: MovieListController.movies[sender.tag])
+        viewModel.savedMovieToDB(movie: AppManager.shared.movies[sender.tag])
         FavoriteMovieController().refresh()
     }
 

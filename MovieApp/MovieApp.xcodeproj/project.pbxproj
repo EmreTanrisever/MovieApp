@@ -114,6 +114,7 @@
 			children = (
 				8B9DE14928627130009D6968 /* App */,
 				8BE7E7482870D903006748C6 /* Constant */,
+				8BE7E7502870E8D7006748C6 /* Managers */,
 				8B9DE1472862711B009D6968 /* Models */,
 				8B9DE14828627120009D6968 /* Network */,
 				8B9DE14A2862713E009D6968 /* Resources */,
@@ -156,7 +157,6 @@
 				8B389E53285E22BF0010B05F /* LaunchScreen.storyboard */,
 				8B389E48285E22BD0010B05F /* AppDelegate.swift */,
 				8B389E4A285E22BD0010B05F /* SceneDelegate.swift */,
-				8BE7E74E2870E5F0006748C6 /* AppManager.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -220,6 +220,14 @@
 				8BE7E7492870D914006748C6 /* Constant.swift */,
 			);
 			path = Constant;
+			sourceTree = "<group>";
+		};
+		8BE7E7502870E8D7006748C6 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				8BE7E74E2870E5F0006748C6 /* AppManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		BD7E4E23B3B188C5B4C7EDF4 /* Frameworks */ = {
