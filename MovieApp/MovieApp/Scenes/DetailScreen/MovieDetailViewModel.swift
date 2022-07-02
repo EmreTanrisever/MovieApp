@@ -8,9 +8,5 @@
 import Foundation
 
 struct MovieDetailViewModel {
-    private let networkService = MovieService()
     
-    func getMoviesFromService() async -> [Movie] {
-        return await networkService.getData()
-    }
 }

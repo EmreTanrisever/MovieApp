@@ -55,7 +55,9 @@ extension SplashScreenController {
         for i in 0..<items.count {
             items[i].image = UIImage(systemName: images[i])
         }
-
-        self.present(tabBar, animated: true)
+        let viewModel = SplashScreenViewModel()
+        viewModel.fetchMovies()
+        
+        self.view.window?.rootViewController = tabBar
     }
 }

@@ -12,10 +12,6 @@ struct MovieListViewModel {
     private let key = "Deneme2"
     private var isItSaved = false
     
-    func getMoviesFromService() async -> [Movie] {
-        return await networkService.getData()
-    }
-
     mutating func savedMovieToDB(movie: Movie) {
         var movies = readMovies()
         for newMovie in movies {

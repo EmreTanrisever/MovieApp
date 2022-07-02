@@ -9,8 +9,6 @@ import UIKit
 import Kingfisher
 
 class MovieDetailViewController: UIViewController {
-    
-    var movies = MovieListController.movies
     var index = Int()
     
     let movieImageView: UIImageView = {
@@ -61,17 +59,17 @@ class MovieDetailViewController: UIViewController {
         view.backgroundColor = .white
         
         configure()
-        setMovie(index)
+        //setMovie(index)
     }
     
     private func setMovie(_ index: Int) {
-        let movie = movies[index]
-        let url = "https://image.tmdb.org/t/p/w500" + movie.poster_path
-        movieImageView.kf.setImage(with: URL(string: url))
-        movieTitleLabel.text = "Title: \(movie.original_title)"
-        movieOverViewLabel.text = "Over View: \(movie.overview)"
-        releaseDateLabel.text = "Release Date: \(movie.release_date)"
-        voteAverageLabel.text = "Vote Average: \(movie.vote_average)"
-        voteCountLabel.text = "Vote Count: \(movie.vote_count)"
+//        let movie = movies[index]
+//        let url = "https://image.tmdb.org/t/p/w500" + movie.poster_path
+//        movieImageView.kf.setImage(with: URL(string: url))
+//        movieTitleLabel.text = "Title: \(movie.original_title)"
+//        movieOverViewLabel.text = "Over View: \(movie.overview)"
+//        releaseDateLabel.text = "Release Date: \(movie.release_date)"
+//        voteAverageLabel.text = "Vote Average: \(movie.vote_average)"
+//        voteCountLabel.text = "Vote Count: \(movie.vote_count)"
     }
 }

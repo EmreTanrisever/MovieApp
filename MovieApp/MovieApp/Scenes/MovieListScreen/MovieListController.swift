@@ -19,7 +19,6 @@ class MovieListController: UIViewController {
     }()
     
     private var viewModel = MovieListViewModel()
-    static var movies = [Movie]()
     weak var delegate: FavoriteMovieControllerDelegate?
     
     override func viewDidLoad() {
@@ -31,15 +30,15 @@ class MovieListController: UIViewController {
         title = "Movie List"
 
         configureMovieList()
-        
-        Task {
-            MovieListController.movies = await viewModel.getMoviesFromService()
-            movieListTableView.reloadData()
-        }
+//
+//        Task {
+//            MovieListController.movies = await viewModel.getMoviesFromService()
+//            movieListTableView.reloadData()
+//        }
     }
     
     @objc func addButtonAction(sender: UIButton) {
-        viewModel.savedMovieToDB(movie: MovieListController.movies[sender.tag])
+        //viewModel.savedMovieToDB(movie: MovieListController.movies[sender.tag])
         FavoriteMovieController().refresh()
     }
 
@@ -49,12 +48,12 @@ class MovieListController: UIViewController {
 extension MovieListController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return MovieListController.movies.count
+        return AppManager.shared.movies.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MovieListTableViewCell") as? MovieListTableViewCell else { return UITableViewCell() }
-        cell.setMovie(MovieListController.movies[indexPath.row])
+        cell.setMovie(AppManager.shared.movies[indexPath.row])
         cell.addToFavoriteButton.tag = indexPath.row
         cell.addToFavoriteButton.addTarget(self, action: #selector(addButtonAction(sender:)), for: .touchUpInside)
         return cell

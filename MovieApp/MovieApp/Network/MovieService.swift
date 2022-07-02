@@ -9,38 +9,41 @@ import Foundation
 import UIKit
 
 class MovieService {
-    
-    private let url = "https://api.themoviedb.org/3/movie/popular?api_key=ea3d05bfba9559d3ec11726fd7d6b61e"
-    
-    func getData(completion: @escaping ([Movie]) -> ()) {
-        let dataTask = URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
-            if let error = error {
-                print("Error: \(error.localizedDescription)")
-            } else {
-                guard let data = data , let response = response as? HTTPURLResponse else {
-                    print("Error: Couldn't read response object.")
-                    return
-                }
-    
-                guard response.statusCode == 200 else {
-                    print("Error: Server responded status \(response.statusCode)")
-                    return
-                }
-    
-                let decoder = JSONDecoder()
-                let decodedData = try! decoder.decode(Movies.self, from: data)
-                completion(decodedData.results)
-            }
-        }
-        dataTask.resume()
+
+    enum CustomError: Error {
+        case invalidUrl
+        case invalidData
     }
 
-    func getData() async -> [Movie] {
-        await withCheckedContinuation({ continuation in
-            getData { movies in
-                continuation.resume(returning: movies)
+    func fetchData<T: Codable>(url: URL?,
+                               expecting: T.Type,
+                               completion: @escaping (Result<T, Error>) -> Void) {
+        guard let url = url else {
+            completion(.failure(CustomError.invalidUrl))
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: url) { data, _, error in
+            guard let data = data else {
+                if let error = error {
+                    completion(.failure(error))
+                } else {
+                    completion(.failure(CustomError.invalidData))
+                }
+                return
             }
-        })
+            
+            do {
+                let result = try JSONDecoder().decode(expecting, from: data)
+                completion(.success(result))
+            } catch {
+                completion(.failure(error))
+            }
+        }
+        
+        task.resume()
     }
-    
+
 }
+
+
